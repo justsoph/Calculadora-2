@@ -1,0 +1,22 @@
+/**/
+.display{
+  margin-top:12px;
+  height: 60px;
+  font-size: 40px;
+}
+
+.btn{
+  background-color: #EDD1FE;
+  font-size: 25px;
+}
+
+body{
+  background-color: #BC9DFF;
+}
+
+.linha{
+  margin-top: 60px;
+}
+.btn:hover{
+Background-color: white;
+}
