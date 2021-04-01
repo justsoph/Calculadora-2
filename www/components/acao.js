@@ -1,5 +1,3 @@
-// This is a JavaScript file
-
 var valor;
 var resultado;
 function button(num){
