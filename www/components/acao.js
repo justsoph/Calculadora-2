@@ -1,14 +1,45 @@
-var valor;
-var resultado;
-function button(value){
-  valor = document.calculadora.visor.value + num;
+var textoDisplay = "";
+var valor1 = "0";
+var valor2 = "0";
+var operador = "";
+
+function zerarDisplay(){
+  textoDisplay = "";
+   $(".display").val("");
 }
 
-function reset(){
-  document.calculadora.visor.value = '';
-}
+$(document).on("click",".ce",function(){
+  zerarDisplay();
+  valor1= 0;
+})
 
-function calcular(){
-  resultado = eval(valor);
-  document.calculadora.visor.value = resultado;
-}
+$(document).on("click",".botao",function(){
+  textoDisplay += $(this).val();
+  $(".display").val(textoDisplay);
+})
+
+$(document).on("click",".op",function(){
+  operador = $(this).html();
+  valor1 = textoDisplay;
+  zerarDisplay();
+})
+
+$(document).on("click","#igual",function(){
+  valor2 = textoDisplay;
+  zerarDisplay();
+
+  if(operador == "+"){
+    textoDisplay = parseFloat(valor1) + parseFloat(valor2);
+  }
+  if(operador == "-"){
+    textoDisplay = parseFloat(valor1) - parseFloat(valor2);
+  }
+  if(operador == "*"){
+    textoDisplay = parseFloat(valor1) * parseFloat(valor2);
+  }
+  if(operador == "/"){
+    textoDisplay = parseFloat(valor1) / parseFloat(valor2);
+  }
+
+  $(".display").val(textoDisplay);
+})
