@@ -1,6 +1,6 @@
 var valor;
 var resultado;
-function button(num){
+function button(value){
   valor = document.calculadora.visor.value + num;
 }
 
