@@ -1,45 +1,58 @@
+// This is a JavaScript file
 var textoDisplay = "";
-var valor1 = "0";
-var valor2 = "0";
+
+//Valor 1 das operações
+var valor1 = 0;
+var valor2 = 0;
+var resultado = 0;
+
+//identificar operador do calculo
 var operador = "";
 
+//função para zerar o display
 function zerarDisplay(){
   textoDisplay = "";
-   $(".display").val("");
+  $(".display").val("");
 }
 
-$(document).on("click",".ce",function(){
-  zerarDisplay();
-  valor1= 0;
-})
-
+//Programação dos numeros
 $(document).on("click",".botao",function(){
   textoDisplay += $(this).val();
   $(".display").val(textoDisplay);
 })
 
-$(document).on("click",".op",function(){
+//Programação dos operadores
+$(document).on("click", ".OP", function(){
   operador = $(this).html();
   valor1 = textoDisplay;
   zerarDisplay();
 })
 
-$(document).on("click","#igual",function(){
-  valor2 = textoDisplay;
+//Programação do Botão CE (tentando fazer sozinho)
+$(document).on("click", ".ce", function(){
   zerarDisplay();
+  $(".display").val("0");
+  valor1 = 0;
+})  //Consegui :))))
 
-  if(operador == "+"){
-    textoDisplay = parseFloat(valor1) + parseFloat(valor2);
-  }
-  if(operador == "-"){
-    textoDisplay = parseFloat(valor1) - parseFloat(valor2);
-  }
-  if(operador == "*"){
-    textoDisplay = parseFloat(valor1) * parseFloat(valor2);
-  }
-  if(operador == "/"){
-    textoDisplay = parseFloat(valor1) / parseFloat(valor2);
-  }
+$(document).on("click","#igual", function(){
+   valor2 =  textoDisplay;
+   zerarDisplay();
 
-  $(".display").val(textoDisplay);
+   if(operador == "+"){
+        textoDisplay = parseFloat(valor1) + parseFloat(valor2); 
+        }
+
+   if(operador == "-"){
+        textoDisplay = parseFloat(valor1) - parseFloat(valor2); 
+        }
+
+   if(operador == "/"){
+        textoDisplay = parseFloat(valor1) / parseFloat(valor2); 
+        }
+
+   if(operador == "*"){
+        textoDisplay = parseFloat(valor1) * parseFloat(valor2); 
+        }
+   $(".display").val(textoDisplay);
 })
