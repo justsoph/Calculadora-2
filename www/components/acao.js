@@ -1,5 +1,5 @@
 var textoDisplay = "";
-var valor1 = "0";
+var valor1 = 0;
 var operador = "";
 
 function zerarDisplay(){
@@ -7,7 +7,7 @@ function zerarDisplay(){
    $(".display").val("");
 }
 
-$(document).on("click",".ce",function(){
+$(document).on("click","#ce",function(){
   zerarDisplay();
   valor1= 0;
 })
